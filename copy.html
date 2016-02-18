@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset=utf-8 />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Sequence Theme Demo - Modern Slide In</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="../../demo-assets/css/demo-styles.css" />
+	<!--[if lt IE 8]><link rel="stylesheet" type="text/css" media="screen" href="../../demo-assets/css/demo-styles-ie.css" /><![endif]-->
+	<link rel="stylesheet" type="text/css" media="screen" href="css/sequencejs-theme.modern-slide-in.css" />
+	<!--[if lt IE 9]><link rel="stylesheet" type="text/css" media="screen" href="css/sequencejs-theme.modern-slide-in.ie.css" /><![endif]-->
+
+	<script type="text/javascript">
+	if (typeof jQuery == 'undefined'){
+	    document.write(unescape("%3Cscript src='../../scripts/jquery.js' type='text/javascript'%3E%3C/script%3E"));
+	}
+	</script>
+	<script type="text/javascript" src="../../scripts/sequence.jquery-min.js"></script>
+	<script type="text/javascript">	
+		
+		/mobile/i.test(navigator.userAgent) && !location.hash && setTimeout(function () {
+		  if (!pageYOffset) window.scrollTo(0, 1);
+		}, 1000);
+		
+		jQuery(document).ready(function(){
+			var options = {
+				autoPlay: true,
+				nextButton: false,
+				prevButton: false,
+				animateStartingFrameIn: false,
+				autoPlayDelay: 3000,
+				transitionThreshold: 500,
+				preloader: true,
+				preloadTheseFrames: [1],
+				preloadTheseImages: [
+					"images/model1.png",
+					"images/model2.png",
+					"images/model3.png",
+					"images/model4.png",
+					"images/model5.png",
+					"images/model6.png"
+				]
+			};
+
+			var sequence = jQuery("#sequence").sequence(options).data("sequence");
+
+			sequence.afterLoaded = function(){
+				// $("#nav").fadeIn(100);
+				// $("#nav li:nth-child("+(sequence.settings.startingFrameID)+") img").addClass("active");
+			}
+
+			sequence.beforeNextFrameAnimatesIn = function(){
+				// $("#nav li:not(:nth-child("+(sequence.nextFrameID)+")) img").removeClass("active");
+				// $("#nav li:nth-child("+(sequence.nextFrameID)+") img").addClass("active");
+			}
+			
+			// $("#nav li").click(function(){
+			// 	if(!sequence.active){
+			// 		$(this).children("img").removeClass("active").children("img").addClass("active");
+			// 		sequence.nextFrameID = $(this).index()+1;
+			// 		sequence.goTo(sequence.nextFrameID);
+			// 	}
+			//  });
+		});
+	</script>
+	
+</head>
+	<body>	
+		<div id="header-container">
+			<div id="header">
+					<img class="prev" src="images/btn8-prev.png" alt="Previous Frame" />
+					<img class="next" src="images/btn8-next.png" alt="Next Frame" />
+					
+				<div id="sequence">
+					<ul>
+						<li id="intro">
+							<h2 class="title animate-in">mspiral Creative Media</h2>
+							<h3 class="subtitle animate-in">The Responsive Slider with Advanced CSS3 Transitions</h3>
+							<img class="model animate-in" src="images/model1.png" alt="Model 1" />
+						</li>
+						<li id="creative">
+							<h2 class="title">Phoenix Association</h2>
+							<h3 class="subtitle">Create unique sliders using CSS3 transitions</h3>
+							<img class="model" src="images/model2.png" alt="Model 2" />
+						</li>
+						<li id="support" class="frame3">
+							<h2 class="title">Golden Key Co.,Ltd.</h2>
+							<h3 class="subtitle">Supports modern browsers, old browsers (IE7+), touch devices and responsive designs</h3>
+							<img class="model" src="images/model3.png" alt="Model 3" />
+						</li>
+						<h1>Hello</h1>
+
+							<li id="intro">
+							<h2 class="title animate-in">Green Holiday Myanmar</h2>
+							<h3 class="subtitle animate-in">The Responsive Slider with Advanced CSS3 Transitions</h3>
+							<img class="model animate-in" src="images/model4.png" alt="Model 4" />
+						</li>
+						<li id="creative">
+							<h2 class="title">JZ Hello Planner</h2>
+							<h3 class="subtitle">Create unique sliders using CSS3 transitions</h3>
+							<img class="model" src="images/model5.png" alt="Model 5" />
+						</li>
+						<li id="support" class="frame3">
+							<h2 class="title">National NGOs Network</h2>
+							<h3 class="subtitle">Supports modern browsers, old browsers (IE7+), touch devices and responsive designs</h3>
+							<img class="model" src="images/model6.png" alt="Model 6" />
+						</li>
+					</ul>
+				</div>
+				<ul id="nav">
+				
+				</ul>
+				<div>HEllo</div>
+			</div>
+		</div>
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+			<a href="#" class="thumbnail">
+				<img data-src="#" alt="">
+			</a>
+		</div>
+	</body>
+</html>
