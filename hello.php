@@ -8,7 +8,7 @@ $password = "root";
 // $collation = "utf8mb4_unicode_ci";
 $options = array(
     // PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8mb4"
+    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES "
   );
 $conn = new PDO(
   "mysql:host=$host;dbname=$db", 
